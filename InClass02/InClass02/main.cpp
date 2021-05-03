@@ -1,0 +1,127 @@
+// Immediate Mode Example using glfw
+
+#include <GLFW/glfw3.h>
+#include <iostream>
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+
+// window size
+unsigned int SCR_WIDTH = 800;
+unsigned int SCR_HEIGHT = 800;
+
+//globals
+bool fillTriangle = true;
+
+int main()
+{
+    // glfw: initialize and configure
+    // ------------------------------
+    if (!glfwInit()) {
+        std::cout << "Failed to initiallize GLFW" << std::endl;
+        return -1;
+    }; 
+
+    // glfw window creation
+    // --------------------
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "01_1_Immediate Mode", NULL, NULL);
+    if (window == NULL)
+    {
+        std::cout << "Failed to create GLFW window" << std::endl;
+        glfwTerminate();
+        return -1;
+    }
+    glfwMakeContextCurrent(window);
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetKeyCallback(window, key_callback);
+    
+
+    
+    // render loop
+    // -----------
+    while (!glfwWindowShouldClose(window))
+    {
+        glClear(GL_COLOR_BUFFER_BIT);
+        
+        // setting the camera
+        glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
+        glClearColor(0.2f, 0.3f, 0.4f, 1.0f);
+        float ratio = SCR_WIDTH / (float)SCR_HEIGHT;
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glOrtho(-ratio, ratio, -1.f, 1.f, 1.f, -1.f);
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+        
+        // triangle (red)
+        glColor3f(1.f, 0.f, 0.f);
+        glBegin(GL_TRIANGLES);
+            glVertex3f(-0.8f, -0.8f, 0.f);
+            glVertex3f(-0.2f, -0.8f, 0.f);
+            glVertex3f(-0.5f, -0.2f, 0.f);
+        glEnd();
+        
+        // point on the left top (point)
+        glPointSize(3.0);
+        glColor3f(1.f, 1.f, 0.f);
+        glBegin(GL_POINTS);
+            glVertex3f(-0.8f, 0.2f, 0.f);
+            glVertex3f(-0.2f, 0.2f, 0.f);
+            glVertex3f(-0.5f, 0.8f, 0.f);
+        glEnd();
+
+        // triangle on the right top (mixed color)
+        glColor3f(1.f, 0.f, 0.f);
+        glBegin(GL_TRIANGLES);
+            glVertex3f(0.8f, 0.2f, 0.f);
+            glColor3f(0.f, 0.f, 1.f);
+            glVertex3f(0.2f, 0.2f, 0.f);
+            glColor3f(0.f, 1.f, 0.f);
+            glVertex3f(0.5f, 0.8f, 0.f);
+        glEnd();
+
+        // Triangle on the right bottom (border)
+        glColor3f(0.f, 1.f, 0.f);
+        glBegin(GL_TRIANGLES);
+             glVertex3f(0.8f, -0.8f, 0.f);
+             glVertex3f(0.2f, -0.8f, 0.f);
+             glVertex3f(0.5f, -0.2f, 0.f);
+        glEnd();
+        glColor3f(1.f, 1.f, 1.f);
+        glBegin(GL_LINE_LOOP);
+            glVertex3f(0.8f, -0.8f, 0.f);
+            glVertex3f(0.2f, -0.8f, 0.f);
+            glVertex3f(0.5f, -0.2f, 0.f);
+        glEnd();
+        // Swap buffers
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+
+    // glfw: terminate, clearing all previously allocated GLFW resources.
+    // ------------------------------------------------------------------
+    glfwTerminate();
+    return 0;
+}
+
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, true);
+    }
+    else if (key == GLFW_KEY_R && action == GLFW_PRESS) {
+        if (fillTriangle) fillTriangle = false;
+        else fillTriangle = true;
+    }
+}
+
+// glfw: whenever the window size changed (by OS or user resize) this callback function executes
+// ---------------------------------------------------------------------------------------------
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+    // make sure the viewport matches the new window dimensions; note that width and 
+    // height will be significantly larger than specified on retina displays.
+    glViewport(width/2, 0, width/2, height/2);
+    SCR_WIDTH = width;
+    SCR_HEIGHT = height;
+}
