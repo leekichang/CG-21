@@ -1,0 +1,8 @@
+﻿  InClass09.cpp
+D:\Computer Graphics\Codes\utils\arcball.h(82,27): warning C4244: '=': 'double'에서 'T'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=float
+          ]
+D:\Computer Graphics\Codes\projects\InClass09\InClass09\cone.h(17,24): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  InClass09.vcxproj -> D:\Computer Graphics\Codes\projects\InClass09\Debug\InClass09.exe
