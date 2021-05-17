@@ -1,0 +1,23 @@
+﻿  InClass10.cpp
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\cylinder.h(130,26): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\cylinder.h(149,34): warning C4244: '=': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\cylinder.h(151,36): warning C4244: '=': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\cylinder.h(153,32): warning C4244: '=': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\cylinder.h(155,36): warning C4244: '=': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\cylinder.h(175,36): warning C4244: '=': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\cylinder.h(177,36): warning C4244: '=': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\cylinder.h(179,36): warning C4244: '=': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\cylinder.h(181,36): warning C4244: '=': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Computer Graphics\Codes\utils\arcball.h(82,27): warning C4244: '=': 'double'에서 'T'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=float
+          ]
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\InClass10.cpp(107,59): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\InClass10.cpp(108,63): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\InClass10.cpp(116,59): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\InClass10.cpp(117,63): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\InClass10.cpp(128,54): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+D:\Computer Graphics\Codes\projects\InClass10\InClass10\InClass10.cpp(129,57): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+LINK : warning LNK4098: 'MSVCRT' defaultlib가 다른 라이브러리와 충돌합니다. /NODEFAULTLIB:library를 사용하십시오.
+  InClass10.vcxproj -> D:\Computer Graphics\Codes\projects\InClass10\Debug\InClass10.exe
